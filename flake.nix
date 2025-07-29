@@ -68,6 +68,7 @@
             ansible-lint
             ansible-language-server
             yamllint
+            yamlfmt
 
             # c/c++
             astyle
@@ -118,6 +119,7 @@
             marksman
 
             # misc
+            prettierd
             codeium
             node18Pkgs.nodejs_18
             moldPkgs.mold
@@ -126,7 +128,10 @@
             git
             postgresql
             pkg-config
+
+            # zig
             zig
+            zls
           ]
           ++ pkgs.callPackage ./node-pkgs.nix {customNodeJS = node18Pkgs.nodejs_18;};
       };
