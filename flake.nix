@@ -52,36 +52,7 @@
           fileset = ./config;
         };
         config = {
-          plugins = with pkgs.vimPlugins;
-            [
-              nvim-cmp
-              gruvbox-nvim
-              vim-fugitive
-              mini-icons
-              none-ls-nvim
-              conform-nvim
-              vim-prettier
-              plenary-nvim
-              telescope-nvim
-              telescope-fzf-native-nvim
-              telescope-file-browser-nvim
-              telescope-dap-nvim
-              nvim-dap
-              nvim-dap-virtual-text
-              nvim-dap-view
-              nvim-dap-ui
-              nvim-dap-rr
-              nvim-dap-python
-              nvim-dap-lldb
-              nvim-cursorline
-              nvim-tree-lua
-              harpoon2
-              luasnip
-              windsurf-vim
-              undotree
-              oil-nvim
-            ]
-            ++ pkgs.callPackage ./vim-plugins.nix {};
+          plugins = pkgs.callPackage ./vim-plugins.nix {};
         };
         path = with pkgs;
           [
@@ -90,17 +61,36 @@
             nixfmt-rfc-style
             nixpkgs-fmt
             statix
+            nil
 
             # yaml
+            ansible
+            ansible-lint
+            ansible-language-server
             yamllint
 
             # c/c++
             astyle
             clang
             cppcheck
+            cmake-format
+            llvmPackages_21.clang-tools
 
             # python
-            mypy
+            (python311.withPackages (ps:
+              with ps; [
+                python-lsp-server
+                python-lsp-ruff
+                python-lsp-black
+                pylsp-rope
+                pylsp-mypy
+                pyls-isort
+              ]))
+            pylint
+            pyright
+            ruff
+            black
+            python3
 
             # lua
             stylua
@@ -112,6 +102,20 @@
             rustc
             cargo
             rust-analyzer
+            rustfmt
+
+            # go
+            golangci-lint
+            gofumpt
+            golines
+            gotools
+
+            # sh
+            shellcheck
+            shfmt
+
+            # markdown
+            marksman
 
             # misc
             codeium
@@ -122,14 +126,22 @@
             git
             postgresql
             pkg-config
+            zig
           ]
           ++ pkgs.callPackage ./node-pkgs.nix {customNodeJS = node18Pkgs.nodejs_18;};
       };
     in {
       packages = {
-        default = inputs.tolerable.makeNightlyNeovimConfig "config" neovimConfig;
-        neovim = inputs.tolerable.makeNightlyNeovimConfig "config" neovimConfig;
-        testing = inputs.tolerable.makeNightlyNeovimConfig "config" (
+        default = inputs.tolerable.makeNeovimConfig "config" neovimConfig;
+        neovim = inputs.tolerable.makeNeovimConfig "config" neovimConfig;
+        neovim-nightly = inputs.tolerable.makeNightlyNeovimConfig "config" neovimConfig;
+        testing = inputs.tolerable.makeNeovimConfig "config" (
+          neovimConfig
+          // {
+            testing = true;
+          }
+        );
+        testing-nightly = inputs.tolerable.makeNightlyNeovimConfig "config" (
           neovimConfig
           // {
             testing = true;
