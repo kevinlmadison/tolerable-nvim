@@ -6,11 +6,19 @@
 }:
 with pkgs.vimPlugins;
   [
+    nvim-nio
     nvim-cmp
+    cmp-nvim-lsp
+    cmp-nvim-lua
+    cmp-buffer
+    cmp-path
+    cmp-cmdline
+    cmp_luasnip
     nvim-gdb
     gruvbox-nvim
     gitsigns-nvim
     vim-fugitive
+    vim-repeat
     mini-icons
     none-ls-nvim
     conform-nvim
@@ -36,7 +44,6 @@ with pkgs.vimPlugins;
     nvim-ufo
     nvim-lspconfig
     nvim-lint
-    cmp-nvim-lsp
     typescript-tools-nvim
     harpoon2
     luasnip
