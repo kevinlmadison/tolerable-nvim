@@ -96,6 +96,7 @@
             # lua
             stylua
             selene
+            luajitPackages.luacheck
             lua-language-server
 
             # rust
@@ -116,9 +117,12 @@
             shfmt
 
             # markdown
+            markdownlint-cli
             marksman
 
             # misc
+            nodePackages.prettier
+            nodePackages.jsonlint
             prettierd
             codeium
             node18Pkgs.nodejs_18
