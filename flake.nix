@@ -67,6 +67,7 @@
             ansible
             ansible-lint
             ansible-language-server
+            yaml-language-server
             yamllint
             yamlfmt
 
