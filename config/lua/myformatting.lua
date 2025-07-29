@@ -20,6 +20,7 @@ require("conform").setup({
 		typescript = { "prettierd", "prettier", "prettier-stylelint" },
 		typescriptreact = { "prettier", "prettier-stylelint" },
 		yaml = { "prettierd", "prettier", "prettier-stylelint" },
+		zig = { command = "zig", args = { "fmt", "--stdin" } },
 	},
 })
 
