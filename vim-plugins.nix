@@ -58,6 +58,7 @@ with pkgs.vimPlugins;
     comment-nvim
     which-key-nvim
     lualine-nvim
+    transparent-nvim
   ]
   ++ [
     nvim-treesitter

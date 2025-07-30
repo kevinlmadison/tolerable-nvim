@@ -13,11 +13,11 @@ cmp.setup({
 	-- 	documentation = cmp.config.window.bordered(),
 	-- },
 	window = {
-		completion = {
-			winhighlight = "Normal:Pmenu,FloatBorder:Pmenu,Search:None",
-			col_offset = -3,
-			side_padding = 0,
-		},
+		-- completion = {
+		-- 	winhighlight = "Normal:Pmenu,FloatBorder:Pmenu,Search:None",
+		-- 	col_offset = -3,
+		-- 	side_padding = 0,
+		-- },
 	},
 	formatting = {
 		fields = { "kind", "abbr", "menu" },

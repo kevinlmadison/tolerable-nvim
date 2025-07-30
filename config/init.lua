@@ -17,6 +17,7 @@ vim.opt.incsearch = true
 vim.opt.list = true
 vim.opt.listchars = "trail:¬,precedes:«,extends:»,tab:→⋅"
 vim.opt.number = true
+vim.opt.pumblend = 1
 vim.opt.relativenumber = true
 vim.opt.scrolloff = 8
 vim.opt.shiftround = true
@@ -307,3 +308,8 @@ vim.keymap.set("n", "zK", function()
 		vim.lsp.buf.hover()
 	end
 end, { desc = "Pee[k] fold" })
+
+-- Transparent
+require("transparent").setup({
+	groups = { "Pmenu", "Float", "NormalFloat" },
+})
