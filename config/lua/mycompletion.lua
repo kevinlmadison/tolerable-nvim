@@ -1,17 +1,42 @@
--- Completion (CMP)
+-- Set up nvim-cmp.
 local cmp = require("cmp")
+local luasnip = require("luasnip")
+
 cmp.setup({
-	completion = { completeopt = "menu,menuone,noinsert" },
-	mapping = {
-		["<c-space>"] = cmp.mapping.complete({}),
-		["<c-d>"] = cmp.mapping.scroll_docs(-4),
-		["<c-f>"] = cmp.mapping.scroll_docs(4),
-		["<C-n>"] = cmp.mapping.select_next_item(),
-		["<C-p>"] = cmp.mapping.select_prev_item(),
-		["<CR>"] = cmp.mapping.confirm({
-			behavior = cmp.ConfirmBehavior.Replace,
-			select = true,
-		}),
+	snippet = {
+		expand = function(args)
+			require("luasnip").lsp_expand(args.body) -- For `luasnip` users.
+		end,
+	},
+	-- window = {
+	-- 	completion = cmp.config.window.bordered(),
+	-- 	documentation = cmp.config.window.bordered(),
+	-- },
+	window = {
+		completion = {
+			winhighlight = "Normal:Pmenu,FloatBorder:Pmenu,Search:None",
+			col_offset = -3,
+			side_padding = 0,
+		},
+	},
+	formatting = {
+		fields = { "kind", "abbr", "menu" },
+		format = function(entry, vim_item)
+			local kind = require("lspkind").cmp_format({ mode = "symbol_text", maxwidth = 50 })(entry, vim_item)
+			local strings = vim.split(kind.kind, "%s", { trimempty = true })
+			kind.kind = " " .. (strings[1] or "") .. " "
+			kind.menu = "    (" .. (strings[2] or "") .. ")"
+
+			return kind
+		end,
+	},
+	mapping = cmp.mapping.preset.insert({
+		["<C-b>"] = cmp.mapping.scroll_docs(-4),
+		["<C-f>"] = cmp.mapping.scroll_docs(4),
+		["<C-Space>"] = cmp.mapping.complete(),
+		["<C-e>"] = cmp.mapping.abort(),
+		["<CR>"] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+
 		["<S-Tab>"] = cmp.mapping(function(fallback)
 			if cmp.visible() then
 				cmp.select_prev_item()
@@ -30,31 +55,30 @@ cmp.setup({
 				fallback()
 			end
 		end, { "i", "s" }),
-	},
-	performance = { max_view_entries = 16 },
-	snippet = {
-		expand = function(args)
-			luasnip.lsp_expand(args.body)
-		end,
-	},
-	sources = {
+	}),
+	sources = cmp.config.sources({
 		{ name = "nvim_lsp" },
-		{ name = "nvim_lua" },
-		{ name = "luasnip" },
-		{ name = "path" },
+		{ name = "luasnip" }, -- For luasnip users.
+	}, {
+		{ name = "buffer" },
+	}),
+})
+
+-- Use buffer source for `/` and `?` (if you enabled `native_menu`, this won't work anymore).
+cmp.setup.cmdline({ "/", "?" }, {
+	mapping = cmp.mapping.preset.cmdline(),
+	sources = {
 		{ name = "buffer" },
 	},
-	window = { documentation = { border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" } } },
 })
 
-cmp.setup.cmdline("/", { mapping = cmp.mapping.preset.cmdline(), sources = { { name = "buffer" } } })
-
+-- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
 cmp.setup.cmdline(":", {
 	mapping = cmp.mapping.preset.cmdline(),
-	sources = { { name = "path" }, { name = "cmdline", option = { ignore_cmds = { "Man", "!" } } } },
+	sources = cmp.config.sources({
+		{ name = "path" },
+	}, {
+		{ name = "cmdline" },
+	}),
+	matching = { disallow_symbol_nonprefix_matching = false },
 })
-
-local cmp_autopairs = require("nvim-autopairs.completion.cmp")
-
--- Extra options for cmp-cmdline setup
-cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done())

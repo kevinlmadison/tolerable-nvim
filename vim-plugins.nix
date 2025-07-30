@@ -14,6 +14,7 @@ with pkgs.vimPlugins;
     cmp-path
     cmp-cmdline
     cmp_luasnip
+    lspkind-nvim
     nvim-gdb
     gruvbox-nvim
     gitsigns-nvim
