@@ -1,5 +1,4 @@
 vim.g.mapleader = " "
-vim.cmd.colorscheme("gruvbox")
 
 vim.notify("We're running at least...", vim.log.levels.INFO)
 
@@ -58,12 +57,6 @@ do
 		})
 	end
 end
--- }}
--- --
--- vim.cmd([[let $BAT_THEME = 'gruvbox'
---
--- colorscheme gruvbox
--- ]])
 
 require("mini.icons").setup({})
 MiniIcons.mock_nvim_web_devicons()
@@ -134,6 +127,7 @@ vim.keymap.set("n", "<leader>k", "<cmd>lnext<CR>zz", { desc = "Next quickfix loc
 vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz", { desc = "Prev quickfix location", noremap = true, silent = true })
 
 -- Local Plugin Configs
+require("mycolorscheme")
 require("mycompletion")
 require("mydebugging")
 require("myformatting")
