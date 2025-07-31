@@ -58,6 +58,7 @@ with pkgs.vimPlugins;
     comment-nvim
     which-key-nvim
     lualine-nvim
+    claude-code-nvim
     transparent-nvim
   ]
   ++ [

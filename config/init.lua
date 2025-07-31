@@ -59,6 +59,14 @@ do
 	end
 end
 
+vim.api.nvim_create_autocmd("FileType", {
+	pattern = { "yaml", "yml" },
+	callback = function()
+		vim.opt_local.smartindent = false
+		vim.opt_local.autoindent = true
+	end,
+})
+
 require("mini.icons").setup({})
 MiniIcons.mock_nvim_web_devicons()
 
@@ -313,3 +321,6 @@ end, { desc = "Pee[k] fold" })
 require("transparent").setup({
 	groups = { "Pmenu", "Float", "NormalFloat" },
 })
+
+-- Claude Code
+require("claude-code").setup({})

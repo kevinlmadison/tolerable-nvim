@@ -122,6 +122,7 @@
             marksman
 
             # misc
+            claude-code
             nodePackages.prettier
             nodePackages.jsonlint
             prettierd
