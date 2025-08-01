@@ -1,6 +1,14 @@
 -- Treesitter
 vim.opt.runtimepath:prepend(vim.fs.joinpath(vim.fn.stdpath("data"), "site"))
 require("nvim-treesitter.configs").setup({
+	highlight = {
+		enable = true,
+		additional_vim_regex_highlighting = false,
+	},
+	-- Enable injection queries for embedded languages
+	injections = {
+		enable = true,
+	},
 	incremental_selection = {
 		enable = true,
 		keymaps = { init_selection = "<C-space>", node_decremental = "<bs>", node_incremental = "<C-space>" },

@@ -77,6 +77,13 @@ require("lspconfig").ansiblels.setup({
 	end,
 })
 
+-- bash LSP
+require("lspconfig").bashls.setup({
+	on_attach = function()
+		set_cmn_lsp_keybinds()
+	end,
+})
+
 -- clang LSP
 require("lspconfig").clangd.setup({
 	on_attach = function()

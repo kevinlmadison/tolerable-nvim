@@ -116,6 +116,7 @@
             # sh
             shellcheck
             shfmt
+            bash-language-server
 
             # markdown
             markdownlint-cli
