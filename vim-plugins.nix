@@ -17,6 +17,7 @@ with pkgs.vimPlugins;
     lspkind-nvim
     nvim-gdb
     gruvbox-nvim
+    gruber-darker-nvim
     gitsigns-nvim
     vim-fugitive
     vim-repeat
@@ -383,14 +384,14 @@ with pkgs.vimPlugins;
     nvim-treesitter-parsers.ziggy
     nvim-treesitter-parsers.ziggy_schema
   ]
-  ++ [
-    (vimUtils.buildVimPlugin {
-      name = "coc-lit-html";
-      src = fetchFromGitHub {
-        owner = "fannheyward";
-        repo = "coc-lit-html";
-        rev = "0c942ee11b2f1309db8c7db2bbd65a07dc64fcf2";
-        hash = "sha256-WGuNcD1uRUXbgJ6lm/DHcTnARF6GJ4qmycCDuWsOLpI=";
-      };
-    })
-  ]
+  # ++ [
+  #   (vimUtils.buildVimPlugin {
+  #     name = "vocal-nvim";
+  #     src = fetchFromGitHub {
+  #       owner = "kyza0d";
+  #       repo = "vocal.nvim";
+  #       rev = "f85f0cbc11c5ab99a8276d197fb12d77caa0c50d";
+  #       hash = "sha256-FMoxqYCAP0tF2OahHsMipRaMy/tlUEBNU30KTBtKeuk=";
+  #     };
+  #   })
+  # ]

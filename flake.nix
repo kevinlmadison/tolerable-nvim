@@ -135,6 +135,8 @@
             git
             postgresql
             pkg-config
+            # python313Packages.openai-whisper
+            # sox
 
             # zig
             zig
