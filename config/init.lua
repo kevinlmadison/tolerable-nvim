@@ -2,6 +2,7 @@ vim.g.mapleader = " "
 
 vim.notify("We're running at least...", vim.log.levels.INFO)
 
+
 vim.opt.autoindent = true
 vim.opt.backspace = "indent,eol,start"
 vim.opt.backup = false
@@ -17,7 +18,7 @@ vim.opt.incsearch = true
 vim.opt.list = true
 vim.opt.listchars = "trail:¬,precedes:«,extends:»,tab:→⋅"
 vim.opt.number = true
-vim.opt.pumblend = 1
+vim.opt.pumblend = 30
 vim.opt.relativenumber = true
 vim.opt.scrolloff = 8
 vim.opt.shiftround = true

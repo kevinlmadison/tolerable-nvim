@@ -18,6 +18,7 @@ with pkgs.vimPlugins;
     nvim-gdb
     gruvbox-nvim
     gruber-darker-nvim
+    kanagawa-nvim
     gitsigns-nvim
     vim-fugitive
     vim-repeat
