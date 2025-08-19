@@ -65,8 +65,8 @@
 
             # yaml
             ansible
-            ansible-lint
-            ansible-language-server
+            # ansible-lint
+            # ansible-language-server
             yaml-language-server
             yamllint
             yamlfmt
@@ -79,7 +79,7 @@
             llvmPackages_21.clang-tools
 
             # python
-            (python311.withPackages (ps:
+            (python312.withPackages (ps:
               with ps; [
                 python-lsp-server
                 python-lsp-ruff
