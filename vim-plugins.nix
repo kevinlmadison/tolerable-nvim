@@ -6,6 +6,7 @@
 }:
 with pkgs.vimPlugins;
   [
+    auto-session
     nvim-nio
     nvim-cmp
     cmp-nvim-lsp
