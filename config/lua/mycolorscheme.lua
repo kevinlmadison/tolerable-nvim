@@ -84,9 +84,9 @@ require("kanagawa").setup({
 			PmenuThumb = { bg = theme.ui.bg_p2, blend = vim.o.pumblend },
 		}
 	end,
-	theme = "dragon", -- Load "wave" theme
+	theme = "wave", -- Load "wave" theme
 	background = { -- map the value of 'background' option to a theme
-		dark = "dragon", -- try "dragon" !
+		dark = "wave", -- try "dragon" !
 		light = "lotus",
 	},
 })
