@@ -21,14 +21,14 @@ vim.opt.pumblend = 30
 vim.opt.relativenumber = true
 vim.opt.scrolloff = 8
 vim.opt.shiftround = true
-vim.opt.shiftwidth = 2
+vim.opt.shiftwidth = 4
 vim.opt.signcolumn = "yes"
 vim.opt.smartcase = true
 vim.opt.smartindent = true
 vim.opt.smarttab = true
-vim.opt.softtabstop = 2
+vim.opt.softtabstop = 4
 vim.opt.swapfile = false
-vim.opt.tabstop = 2
+vim.opt.tabstop = 4
 vim.opt.termguicolors = true
 vim.opt.undofile = true
 vim.opt.updatetime = 50
@@ -60,8 +60,11 @@ do
 end
 
 vim.api.nvim_create_autocmd("FileType", {
-	pattern = { "yaml", "yml" },
+	pattern = { "yaml", "yml", "nix" },
 	callback = function()
+		vim.opt_local.tabstop = 2
+		vim.opt_local.softtabstop = 2
+		vim.opt_local.shiftwidth = 2
 		vim.opt_local.smartindent = false
 		vim.opt_local.autoindent = true
 	end,
