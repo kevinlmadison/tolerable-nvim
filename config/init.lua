@@ -331,3 +331,9 @@ require("claude-code").setup({})
 -- Auto Session
 vim.o.sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions"
 require("auto-session").setup({})
+
+-- Leetcode
+require("leetcode").setup({
+	---@type lc.lang
+	lang = "python3",
+})

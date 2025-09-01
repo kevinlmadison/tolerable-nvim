@@ -6,6 +6,8 @@
 }:
 with pkgs.vimPlugins;
   [
+    leetcode-nvim
+    nui-nvim
     auto-session
     nvim-nio
     nvim-cmp
