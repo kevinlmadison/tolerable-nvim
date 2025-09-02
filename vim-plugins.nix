@@ -6,6 +6,7 @@
 }:
 with pkgs.vimPlugins;
   [
+    typst-preview-nvim
     leetcode-nvim
     nui-nvim
     auto-session

@@ -135,6 +135,7 @@
             git
             postgresql
             pkg-config
+            tinymist
             # python313Packages.openai-whisper
             # sox
 

@@ -337,3 +337,6 @@ require("leetcode").setup({
 	---@type lc.lang
 	lang = "python3",
 })
+
+-- Typst
+require("typst-preview").setup({})

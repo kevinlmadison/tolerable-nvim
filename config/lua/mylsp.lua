@@ -271,6 +271,14 @@ require("typescript-tools").setup({
 	},
 })
 
+require("lspconfig")["tinymist"].setup({
+	settings = {
+		formatterMode = "typstyle",
+		exportPdf = "onType",
+		semanticTokens = "disable",
+	},
+})
+
 -- YAML LSP
 require("lspconfig").yamlls.setup({
 	on_attach = function()
