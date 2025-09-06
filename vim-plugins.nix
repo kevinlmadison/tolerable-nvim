@@ -28,6 +28,7 @@ with pkgs.vimPlugins;
     vim-repeat
     mini-icons
     none-ls-nvim
+    null-ls-nvim
     conform-nvim
     vim-prettier
     plenary-nvim
