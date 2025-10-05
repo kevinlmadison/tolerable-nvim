@@ -1,29 +1,38 @@
+vim.cmd("colorscheme default")
+vim.cmd [[
+  hi Normal guibg=NONE ctermbg=NONE
+  hi NormalNC guibg=NONE ctermbg=NONE
+  hi SignColumn guibg=NONE ctermbg=NONE
+  hi LineNr guibg=NONE ctermbg=NONE
+  hi EndOfBuffer guibg=NONE ctermbg=NONE
+]]
+
 -- Gruvbox
 --
 -- Default options:
--- require("gruvbox").setup({
--- 	terminal_colors = true, -- add neovim terminal colors
--- 	undercurl = true,
--- 	underline = true,
--- 	bold = true,
--- 	italic = {
--- 		strings = true,
--- 		emphasis = true,
--- 		comments = true,
--- 		operators = false,
--- 		folds = true,
--- 	},
--- 	strikethrough = true,
--- 	invert_selection = false,
--- 	invert_signs = false,
--- 	invert_tabline = false,
--- 	inverse = true, -- invert background for search, diffs, statuslines and errors
--- 	contrast = "", -- can be "hard", "soft" or empty string
--- 	palette_overrides = {},
--- 	overrides = {},
--- 	dim_inactive = false,
--- 	transparent_mode = true,
--- })
+require("gruvbox").setup({
+	terminal_colors = true, -- add neovim terminal colors
+	undercurl = true,
+	underline = true,
+	bold = true,
+	italic = {
+		strings = true,
+		emphasis = true,
+		comments = true,
+		operators = false,
+		folds = true,
+	},
+	strikethrough = true,
+	invert_selection = false,
+	invert_signs = false,
+	invert_tabline = false,
+	inverse = true, -- invert background for search, diffs, statuslines and errors
+	contrast = "", -- can be "hard", "soft" or empty string
+	palette_overrides = {},
+	overrides = {},
+	dim_inactive = false,
+	transparent_mode = true,
+})
 --
 -- vim.o.background = "dark" -- or "light" for light mode
 -- vim.cmd([[colorscheme gruvbox]])
@@ -92,4 +101,4 @@ require("kanagawa").setup({
 })
 
 -- setup must be called before loading
-vim.cmd("colorscheme kanagawa")
+-- vim.cmd("colorscheme kanagawa")
