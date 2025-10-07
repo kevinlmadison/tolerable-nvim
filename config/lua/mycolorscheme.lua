@@ -10,7 +10,7 @@ vim.api.nvim_create_autocmd("ColorScheme", {
   end,
 })
 
-vim.cmd("colorscheme gruber-darker")
+vim.cmd("colorscheme retrobox")
 
 
 -- Gruvbox
