@@ -264,7 +264,19 @@ vim.keymap.set("n", "<leader>pv", "<cmd>Oil<CR>", { desc = "[p]roject [v]iew", n
 require("flash").setup({})
 
 -- Indent Blankline
-require("ibl").setup({})
+require("ibl").setup({
+	enabled = false,
+})
+
+-- Enable only for YAML files
+vim.api.nvim_create_autocmd("FileType", {
+	pattern = { "yaml", "yml" },
+	callback = function()
+		require("ibl").setup_buffer(0, {
+			enabled = true,
+		})
+	end,
+})
 
 -- LuaSnip
 require("luasnip").config.setup({})
