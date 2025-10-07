@@ -21,33 +21,33 @@ local lualine = require("lualine")
 --   red      = '#9d0006', -- red
 -- }
 -- Gruvbox Dark
-local colors = {
-  bg       = '#182828', -- gruvbox dark background
-  fg       = '#ebdbb2', -- light fg
-  yellow   = '#fabd2f', -- bright yellow
-  cyan     = '#83a598', -- cyan / aqua
-  darkblue = '#076678', -- dark blue
-  green    = '#b8bb26', -- bright green
-  orange   = '#fe8019', -- bright orange
-  violet   = '#d3869b', -- purple (closest to violet)
-  magenta  = '#b16286', -- magenta
-  blue     = '#458588', -- blue
-  red      = '#cc241d', -- red
-}
--- Evil Default
 -- local colors = {
---   bg       = '#202328',
---   fg       = '#bbc2cf',
---   yellow   = '#ECBE7B',
---   cyan     = '#008080',
---   darkblue = '#081633',
---   green    = '#98be65',
---   orange   = '#FF8800',
---   violet   = '#a9a1e1',
---   magenta  = '#c678dd',
---   blue     = '#51afef',
---   red      = '#ec5f67',
+--   bg       = '#182828', -- gruvbox dark background
+--   fg       = '#ebdbb2', -- light fg
+--   yellow   = '#fabd2f', -- bright yellow
+--   cyan     = '#83a598', -- cyan / aqua
+--   darkblue = '#076678', -- dark blue
+--   green    = '#b8bb26', -- bright green
+--   orange   = '#fe8019', -- bright orange
+--   violet   = '#d3869b', -- purple (closest to violet)
+--   magenta  = '#b16286', -- magenta
+--   blue     = '#458588', -- blue
+--   red      = '#cc241d', -- red
 -- }
+-- Evil Default
+local colors = {
+  bg       = '#202328',
+  fg       = '#bbc2cf',
+  yellow   = '#ECBE7B',
+  cyan     = '#008080',
+  darkblue = '#081633',
+  green    = '#98be65',
+  orange   = '#FF8800',
+  violet   = '#a9a1e1',
+  magenta  = '#c678dd',
+  blue     = '#51afef',
+  red      = '#ec5f67',
+}
 
 local conditions = {
 	buffer_not_empty = function()
