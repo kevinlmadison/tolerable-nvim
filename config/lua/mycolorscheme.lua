@@ -10,7 +10,8 @@
 --   end,
 -- })
 
-vim.cmd("colorscheme zaibatsu")
+-- vim.cmd("colorscheme zaibatsu")
+vim.cmd("colorscheme darkblue")
 
 
 -- Gruvbox
