@@ -390,14 +390,14 @@ with pkgs.vimPlugins;
     nvim-treesitter-parsers.ziggy
     nvim-treesitter-parsers.ziggy_schema
   ]
-  # ++ [
-  #   (vimUtils.buildVimPlugin {
-  #     name = "vocal-nvim";
-  #     src = fetchFromGitHub {
-  #       owner = "kyza0d";
-  #       repo = "vocal.nvim";
-  #       rev = "f85f0cbc11c5ab99a8276d197fb12d77caa0c50d";
-  #       hash = "sha256-FMoxqYCAP0tF2OahHsMipRaMy/tlUEBNU30KTBtKeuk=";
-  #     };
-  #   })
-  # ]
+  ++ [
+    (vimUtils.buildVimPlugin {
+      name = "colibri-colorscheme-nvim";
+      src = fetchFromGitHub {
+        owner = "archseer";
+        repo = "colibri.vim";
+        rev = "ad82132e0cbbdfa194d722f15c2df8f0d04b5b71";
+        hash = "sha256-wLmXyoVdOIsOcpshGFvDiEou++j42p2w2zYy9ZDidqo=";
+      };
+    })
+  ]
