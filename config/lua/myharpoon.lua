@@ -1,5 +1,6 @@
 -- Harpoon
 require("harpoon"):setup({})
+
 do
 	local harpoon_keymaps = {
 

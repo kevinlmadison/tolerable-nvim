@@ -8,6 +8,7 @@ with pkgs.vimPlugins;
   [
     typst-preview-nvim
     leetcode-nvim
+    colibri-vim
     nui-nvim
     auto-session
     nvim-nio
@@ -390,14 +391,14 @@ with pkgs.vimPlugins;
     nvim-treesitter-parsers.ziggy
     nvim-treesitter-parsers.ziggy_schema
   ]
-  ++ [
-    (vimUtils.buildVimPlugin {
-      name = "colibri-colorscheme-nvim";
-      src = fetchFromGitHub {
-        owner = "archseer";
-        repo = "colibri.vim";
-        rev = "ad82132e0cbbdfa194d722f15c2df8f0d04b5b71";
-        hash = "sha256-wLmXyoVdOIsOcpshGFvDiEou++j42p2w2zYy9ZDidqo=";
-      };
-    })
-  ]
+  # ++ [
+  #   (vimUtils.buildVimPlugin {
+  #     name = "colibri-colorscheme-nvim";
+  #     src = fetchFromGitHub {
+  #       owner = "archseer";
+  #       repo = "colibri.vim";
+  #       rev = "ad82132e0cbbdfa194d722f15c2df8f0d04b5b71";
+  #       hash = "sha256-wLmXyoVdOIsOcpshGFvDiEou++j42p2w2zYy9ZDidqo=";
+  #     };
+  #   })
+  # ]
