@@ -213,6 +213,7 @@ require("lspconfig").rust_analyzer.setup({
 	on_attach = function()
 		set_cmn_lsp_keybinds()
 	end,
+	capabilities = capabilities,
 })
 
 -- Typescript/Javascript LSP

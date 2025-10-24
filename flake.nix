@@ -101,7 +101,7 @@
             lua-language-server
 
             # rust
-            rust-bin.stable."1.81.0".default
+            rust-bin.stable.latest.default
             rustc
             cargo
             rust-analyzer
