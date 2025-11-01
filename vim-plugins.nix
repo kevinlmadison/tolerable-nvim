@@ -33,6 +33,7 @@ with pkgs.vimPlugins;
     hover-nvim
     vim-prettier
     plenary-nvim
+    rose-pine
     telescope-nvim
     telescope-fzf-native-nvim
     telescope-file-browser-nvim
