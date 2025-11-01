@@ -18,13 +18,13 @@
 --
 -- Default options:
 require("gruvbox").setup({
-	terminal_colors = true, -- add neovim terminal colors
+	terminal_colors = false, -- add neovim terminal colors
 	undercurl = true,
-	underline = true,
+	underline = false,
 	bold = true,
 	italic = {
 		strings = true,
-		emphasis = true,
+		emphasis = false,
 		comments = true,
 		operators = false,
 		folds = true,
@@ -55,8 +55,8 @@ require("kanagawa").setup({
 	undercurl = true, -- enable undercurls
 	commentStyle = { italic = true },
 	functionStyle = {},
-	keywordStyle = { italic = true },
-	statementStyle = { bold = true },
+	keywordStyle = { italic = false },
+	statementStyle = { bold = false },
 	typeStyle = {},
 	transparent = false, -- do not set background color
 	dimInactive = false, -- dim inactive window `:h hl-NormalNC`
