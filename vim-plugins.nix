@@ -9,6 +9,7 @@ with pkgs.vimPlugins;
     typst-preview-nvim
     leetcode-nvim
     colibri-vim
+    tokyonight-nvim
     nui-nvim
     auto-session
     nvim-nio
