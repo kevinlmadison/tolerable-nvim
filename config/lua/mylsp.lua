@@ -2,14 +2,15 @@
 -- Common LSP key mappings
 local function set_cmn_lsp_keybinds()
 	local lsp_keybinds = {
-		{
-			key = "K",
-			action = vim.lsp.buf.hover,
-			options = {
-				buffer = 0,
-				desc = "hover [K]noledge with LSP",
-			},
-		},
+		-- Removed: K keymap now handled by hover.nvim in init.lua
+		-- {
+		-- 	key = "K",
+		-- 	action = vim.lsp.buf.hover,
+		-- 	options = {
+		-- 		buffer = 0,
+		-- 		desc = "hover [K]noledge with LSP",
+		-- 	},
+		-- },
 		{
 			key = "gd",
 			action = vim.lsp.buf.definition,
