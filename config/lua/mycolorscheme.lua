@@ -4,8 +4,13 @@ local colorschemes = {
   require("colorschemes.tokyonight"),
   require("colorschemes.rose-pine"),
   require("colorschemes.kanagawa"),
+  require("colorschemes.catppuccin"),
+  -- require("colorschemes.nord"),
+  -- require("colorschemes.nordic"),
+  require("colorschemes.onedark"),
 }
 
-vim.cmd("colorscheme tokyonight-night")
+
+vim.cmd("colorscheme onedark")
 
 return colorschemes

@@ -8,6 +8,9 @@ with pkgs.vimPlugins;
   [
     typst-preview-nvim
     leetcode-nvim
+    onedark-nvim
+    onedarkpro-nvim
+    catppuccin-nvim
     colibri-vim
     tokyonight-nvim
     nui-nvim
@@ -395,11 +398,22 @@ with pkgs.vimPlugins;
   ]
   # ++ [
   #   (vimUtils.buildVimPlugin {
-  #     name = "colibri-colorscheme-nvim";
+  #     name = "nordic-nvim";
   #     src = fetchFromGitHub {
-  #       owner = "archseer";
-  #       repo = "colibri.vim";
-  #       rev = "ad82132e0cbbdfa194d722f15c2df8f0d04b5b71";
+  #       owner = "AlexvZyl";
+  #       repo = "nordic.nvim";
+  #       rev = "ac59333ee4b44ec8e4cbce491689e11d2fce3902";
+  #       hash = "sha256-wLmXyoVdOIsOcpshGFvDiEou++j42p2w2zYy9ZDidqo=";
+  #     };
+  #   })
+  # ]
+  # ++ [
+  #   (vimUtils.buildVimPlugin {
+  #     name = "nord-nvim";
+  #     src = fetchFromGitHub {
+  #       owner = "shaunsingh";
+  #       repo = "nord.nvim";
+  #       rev = "80c1e5321505aeb22b7a9f23eb82f1e193c12470";
   #       hash = "sha256-wLmXyoVdOIsOcpshGFvDiEou++j42p2w2zYy9ZDidqo=";
   #     };
   #   })
