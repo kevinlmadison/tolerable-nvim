@@ -22,6 +22,6 @@ local colorschemes = {
 --   end,
 -- })
 
-vim.cmd("colorscheme toykonight-moon")
+vim.cmd("colorscheme tokyonight-moon")
 
 return colorschemes
